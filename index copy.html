@@ -185,10 +185,14 @@
     .quote { font-size: 18px; color: #25344a; border-left: 4px solid var(--gold); padding-left: 20px; margin: 0; }
     .cta { margin-top: 28px; background: linear-gradient(135deg, var(--navy), var(--navy-2)); color: #fff; border-radius: 20px; padding: 24px; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
     .cta strong { display: block; font-size: 22px; margin-bottom: 2px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #fff; text-decoration: none; min-width: 120px; padding: 13px 20px; border-radius: 999px; font-size: 15px; line-height: 1; font-weight: 850; box-shadow: 0 12px 24px rgba(184,134,59,.28); transition: transform .18s ease, box-shadow .18s ease; }
-    .button:hover { transform: translateY(-1px); box-shadow: 0 16px 30px rgba(184,134,59,.34); }
-    .connect-button { display: flex; align-items: center; justify-content: center; width: min(240px, 100%); margin: 26px auto 0; text-align: center; color: var(--navy); background: #fff; border: 1.5px solid var(--navy); border-radius: 999px; padding: 11px 22px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: clamp(17px, 1.8vw, 20px); line-height: 1; font-weight: 850; letter-spacing: .01em; text-decoration: none; box-shadow: 0 10px 24px rgba(7,31,63,.16); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
-    .connect-button:hover { transform: translateY(-1px); border-color: var(--gold); box-shadow: 0 14px 30px rgba(7,31,63,.22); }
+    .button { display: inline-block; white-space: nowrap; background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #fff; text-decoration: none; padding: 14px 20px; border-radius: 999px; font-weight: 850; box-shadow: 0 12px 24px rgba(184,134,59,.28); }
+    .connect-button { display: block; width: min(320px, 100%); margin: 30px auto 0; text-align: center; color: #3a3b8f; background: #fff; border: 2px solid rgba(7,31,63,.72); border-radius: 999px; padding: 14px 22px; font-size: clamp(24px, 3.2vw, 34px); line-height: 1; font-weight: 900; text-decoration: none; box-shadow: 0 12px 28px rgba(7,31,63,.08); }
+    .connect-button:hover { transform: translateY(-1px); box-shadow: 0 16px 32px rgba(7,31,63,.12); }
+
+    .contact-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 22px 38px 34px; background: rgba(255,255,255,.92); }
+    .contact-strip a { display: flex; gap: 14px; align-items: center; border: 1px solid rgba(7,31,63,.12); background: #fff; border-radius: 16px; padding: 18px 20px; text-decoration: none; color: var(--navy); font-weight: 850; box-shadow: 0 10px 24px rgba(7,31,63,.05); }
+    .contact-strip small { display: block; color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: .08em; margin-bottom: 3px; }
+    .contact-strip .ico { color: var(--gold); font-size: 23px; width: 24px; text-align: center; }
     footer { text-align: center; padding: 26px 20px 34px; color: var(--muted); background: rgba(255,255,255,.92); font-size: 14px; }
     @media (max-width: 920px) {
       .hero { display: block; min-height: 0; }
@@ -224,6 +228,8 @@
       .rma-link { font-size: 17px; width: 100%; justify-content: center; }
       .quote { font-size: 16px; }
       .cta { flex-direction: column; align-items: flex-start; }
+      .contact-strip { grid-template-columns: 1fr; padding: 18px 22px 28px; }
+      .contact-strip a { padding: 15px 16px; }
     }
   </style>
 </head>
@@ -236,13 +242,13 @@
         <div class="script">Sheo</div>
         <h1>Catherin</h1>
         <div class="role">Professional Profile</div>
-        <p class="intro">Throughout my career I've worked across different parts of the property journey — from helping clients secure finance, to guiding buyers and sellers through residential transactions.</p>
-        <div class="tagline">Your property. My priority. ♡</div>
+        <p class="intro">Helping clients navigate from finance approval to successful settlement.</p>
+        <div class="tagline">From Inquiry to Settlement ♡</div>
       </div>
     </section>
     <section class="proof-band" aria-label="Professional credentials">
       <article class="proof"><div class="icon-circle">🎓</div><div><h3>Qualified</h3><ul><li>Advanced Diploma of Conveyancing (Victoria)</li><li>Licensed Estate Agent (Victoria)</li><li>Diploma of Mortgage Finance</li></ul></div></article>
-      <article class="proof"><div class="icon-circle">★</div><div><h3>Nominated</h3><strong>One of the best agents in West Melbourne</strong><a class="rma-badge" href="https://www.ratemyagent.com.au/real-estate-agent/catherine-sheo-iw388/sales/reviews" target="_blank" rel="noopener">RateMyAgent Reviews</a><p>Voted by clients for delivering exceptional service and achieving great results.</p></div></article>
+      <article class="proof"><div class="icon-circle">★</div><div><h3>Nominated</h3><strong>One of the best agents in West Melbourne</strong><a class="rma-badge" href="https://www.ratemyagent.com.au/real-estate-agent/catherine-sheo-iw388/sales/reviews" target="_blank" rel="noopener">RateMyAgent Reviews</a><p>Trusted by 57+ verified clients for professional service, clear communication and strong transaction support.</p></div></article>
       <article class="proof"><div class="icon-circle">🏆</div><div><h3>Awarded</h3><strong>Westpac Platinum Broker</strong><p>Recognised for outstanding performance, customer outcomes and professional excellence.</p></div></article>
     </section>
     <section class="section" aria-label="What I can offer the team"><div class="section-title">What I Can Offer to the Team</div><div class="process">
@@ -253,8 +259,15 @@
       <article class="step"><div class="step-icon">🔑</div><div><h4>Settlement & Beyond</h4><p>Practical customer care across the whole journey and beyond.</p></div></article>
     </div></section>
     <section class="trust-grid" aria-label="Experience and reviews">
-      <article class="card"><h2>Experience You Can Trust</h2><div class="trust-item"><div class="small-icon">⌂</div><div><strong>10+ Years Property Experience</strong><p>Real exposure in mortgage broking, residential real estate and property transactions.</p></div></div><div class="trust-item"><div class="small-icon">👥</div><div><strong>End-to-End Support</strong><p>From strategy to settlement, I understand the process, timelines and pressure points.</p></div></div><div class="trust-item"><div class="small-icon">✓</div><div><strong>Professional & Transparent</strong><p>Honest advice, strong communication and always acting with the client's best interests in mind.</p></div></div><a class="connect-button" href="conveyancing-journey.html#contact">Let’s connect</a></article>
-      <article class="card review-card"><h2>What My Clients Say</h2><div class="rating-row"><div class="rating">5.0</div><div><div class="stars">★★★★★</div><strong>Based on 57 reviews</strong></div></div><a class="rma-link" href="https://www.ratemyagent.com.au/real-estate-agent/catherine-sheo-iw388/sales/reviews" target="_blank" rel="noopener">ratemyagent reviews ↗</a><blockquote class="quote">Catherine is professional, reliable and goes above and beyond for her clients. Especially when transactions involved unexpected complexities. Highly recommend!</blockquote><div class="cta"><div><strong>Why Conveyancing?</strong><span>Conveyancing offers a regulated, credible skill set. It is the natural next step for me — applying my full property experience to deliver on-time and secure settlements.</span></div><a class="button" href="conveyancing-journey.html">View my CV</a></div></article>
+      <article class="card"><h2>Experience You Can Trust</h2><div class="trust-item"><div class="small-icon">⌂</div><div><strong>10+ Years Property Experience</strong><p>Real exposure in mortgage broking, residential real estate and property transactions.</p></div></div><div class="trust-item"><div class="small-icon">👥</div><div><strong>End-to-End Support</strong><p>From strategy to settlement, I understand the process, timelines and pressure points.</p></div></div><div class="trust-item"><div class="small-icon">✓</div><div><strong>Professional & Transparent</strong><p>Honest advice, strong communication and always acting with the client's best interests in mind.</p></div></div><a class="connect-button" href="mailto:catsheo@gmail.com?subject=Conveyancing%20Profile%20Enquiry">Let’s connect</a></article>
+      <article class="card review-card"><h2>What My Clients Say</h2><div class="rating-row"><div class="rating">5.0</div><div><div class="stars">★★★★★</div><strong>Based on 57 reviews</strong></div></div><a class="rma-link" href="https://www.ratemyagent.com.au/real-estate-agent/catherine-sheo-iw388/sales/reviews" target="_blank" rel="noopener">ratemyagent reviews ↗</a><blockquote class="quote">Catherine is professional, reliable and goes above and beyond for her clients. Especially when transactions involved unexpected complexities. Highly recommend!</blockquote><div class="cta"><div><strong>Why Conveyancing?</strong><span>Finance, sales and settlements — I have seen every side of the property transaction. Conveyancing is where precision meets protection, allowing me to bring end-to-end property knowledge into a role where attention to detail, compliance and client care directly safeguard every settlement.</span></div><a class="button" href="conveyancing-journey.html">View my CV</a></div></article>
+    </section>
+
+    <section id="contact" class="contact-strip" aria-label="Contact details">
+      <a href="tel:0455436122"><span class="ico">☎</span><span><small>Phone</small>0455 436 122</span></a>
+      <a href="mailto:catsheo@gmail.com?subject=Conveyancing%20Profile%20Enquiry"><span class="ico">✉</span><span><small>Email</small>catsheo@gmail.com</span></a>
+      <a href="https://www.linkedin.com/in/catherinsheo2017/" target="_blank" rel="noopener"><span class="ico">in</span><span><small>LinkedIn</small>LinkedIn Profile</span></a>
+      <a href="https://www.ratemyagent.com.au/real-estate-agent/catherine-sheo-iw388/sales/reviews" target="_blank" rel="noopener"><span class="ico">☆</span><span><small>Reviews</small>RateMyAgent Reviews</span></a>
     </section>
     <footer>Conveyancer Profile | Designed for mobile, tablet and desktop viewing</footer>
   </main>
